@@ -152,7 +152,7 @@
 		}
 	}
 	// .menu__list-item-title
-	&__list-item-title {
+	&__list-item-button {
 		font-family: Montserrat;
 		font-style: normal;
 		font-weight: 500;
@@ -162,7 +162,7 @@
 		cursor: pointer;
 	}
 	// .menu__list-icon-vertical
-	&__list-icon-vertical {
+	&__list-icon {
 		position: relative;
 		transition: all 0.7s ease;
 		&::before{
@@ -202,7 +202,17 @@
 		color: #1b315f;
 		
 	}
+	// .menu__sub-list
+	&__sub-list {
+	}
+	// .menu__sub-item
+	&__sub-item {
+	}
+	// .menu__sub-link
+	&__sub-link {
+	}
 }
+
 
 //====================================================================================================
 
