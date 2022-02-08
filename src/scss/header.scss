@@ -1,8 +1,8 @@
 //====================================================================================================
 .header {
+	z-index: 50;
 	// .header__top-content
 	&__top-content {
-		z-index: 50;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -26,6 +26,56 @@
 		align-items: end;
 		margin: 0 12px;
 	}
+	// .header__top-content-search
+	&__top-content-search {
+	}
+	// .header__top-content-search-form
+	&__top-content-search-form {
+		display: flex;
+		align-items: center;
+		transition: all 0.7s ease;
+		@media (any-hover:hover) {
+			&:hover{
+				.header__top-content-search-input{
+					transition: all 0.7s ease;
+					width: rem(500);
+					right: 0;
+					visibility: visible;
+					pointer-events: auto;
+					padding: 0 10px;
+					opacity: 1;
+					z-index: 0;
+				}
+			}
+		}
+
+	}
+	// .header__top-content-search-input
+	&__top-content-search-input {
+		position: relative;
+		width: 0;
+		right: -50px;
+		height: 56px;
+		visibility: hidden;
+		opacity: 0;
+		z-index: -5;
+		pointer-events: none;
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-style: normal;
+		color: $mainColor;
+		font-size: rem(16);
+		border: 1px solid #f1f5ff;
+		padding: 0 0;
+		transition: all 0.7s ease;
+		&:focus{
+			transition: all 0.7s ease;
+			color: #212529;
+			background-color: #f1f5ff;
+			border-color: #2770f1;
+			outline: 0;
+		}
+	}
 	// .header__content-search-box
 	&__top-content-search-box {
 		display: flex;
@@ -44,9 +94,7 @@
 		width: 28px;
 		height: 28px;
 	}
-	// .header__bottom-content
-	&__bottom-content {
-		z-index: 50;
+	&__bottom-line{
 		background-color: #ffffff;
 		border-bottom: 1px solid #c0d3fb;
 	}
@@ -122,10 +170,6 @@
 	font-size: rem(16);
 	line-height: 24px;
 }
-.button-blue {
-}
-.button-blue-link {
-}
 .menu {
 	// .menu__list
 	&__list {
@@ -164,22 +208,6 @@
 				}
 			}
 		}
-		// transition: all 0.7s ease;
-		// &::after {
-		// 	content: "";
-		// 	position: absolute;
-		// 	bottom: 0px;
-		// 	left: 0;
-		// 	height: 2px;
-		// 	width: 0;
-		// 	transition: all 0.7s ease;
-		// }
-		// &:hover {
-		// 	&::after {
-		// 		background-color: #2770f1;
-		// 		width: 100%;
-		// 	}
-		// }
 	}
 	// .menu__list-item-title
 	&__list-item-button {
@@ -244,7 +272,6 @@
 		pointer-events: none;
 		opacity: 0;
 	}
-
 	// .menu__sub-item
 	&__sub-item {
 		padding: 0 10px;
