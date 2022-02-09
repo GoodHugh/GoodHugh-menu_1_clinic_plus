@@ -107,15 +107,15 @@
 	}
 	// .logo__link-img
 	&__link-img {
-		height: 64px;
-		width: 64px;
-		margin: 0 rem(5);
+		@include adaptiv-value("height", 64, 38, 1);
+		@include adaptiv-value("width", 64, 38, 1);
+		margin: 0 5px;
 	}
 	// .logo__link-title
 	&__link-title {
-		width: 214px;
-		height: 56px;
-		margin: 0 rem(5);
+		@include adaptiv-value("width", 214, 95, 1);
+		@include adaptiv-value("height", 56, 32, 1);
+		margin: 0 5px;
 	}
 }
 .social {
@@ -125,17 +125,15 @@
 	}
 	// .social__list-item
 	&__list-item {
-		height: 48px;
-		width: 48px;
-		margin: 0 rem(12);
+		margin: 0 12px;
 	}
 	// .social__list-item-link
 	&__list-item-link {
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		width: 48px;
-		height: 48px;
+		@include adaptiv-value("height", 48, 24, 1);
+		@include adaptiv-value("width", 48, 24, 1);
 		border-radius: 57px;
 		background-color: #f1f5ff;
 		transition: all 0.7s ease;
@@ -152,22 +150,22 @@
 	// .social__list-item-link-img
 	&__list-item-link-icon {
 		fill: #2770f1;
-		width: 25px;
-		height: 25px;
+		@include adaptiv-value("height", 25, 14, 1);
+		@include adaptiv-value("width", 25, 14, 1);
 	}
 }
 .telephone {
 	font-family: $fontFamily;
 	font-weight: 800;
 	color: #162c5b;
-	font-size: rem(24);
+	@include adaptiv-value("font-size", 24, 14, 1);
 }
 .position-map {
 	font-family: $fontFamily;
 	font-weight: normal;
 	font-style: normal;
 	color: $mainColor;
-	font-size: rem(16);
+	@include adaptiv-value("font-size", 16, 12, 1);
 	line-height: 24px;
 }
 .menu {
