@@ -8,6 +8,9 @@
 		align-items: center;
 		background-color: #fff;
 		padding: 15px 0;
+		@media (max-width:$tablet){
+			padding: 5px 0;
+		}
 	}
 	// .header__top-content-left
 	&__top-content-left {
@@ -25,6 +28,9 @@
 		flex-direction: column;
 		align-items: end;
 		margin: 0 12px;
+		@media (max-width: $mobile) {
+			display: none;
+		}
 	}
 	// .header__top-content-search
 	&__top-content-search {
@@ -34,9 +40,9 @@
 		display: flex;
 		align-items: center;
 		transition: all 0.7s ease;
-		@media (any-hover:hover) {
-			&:hover{
-				.header__top-content-search-input{
+		@media (any-hover: hover) {
+			&:hover {
+				.header__top-content-search-input {
 					transition: all 0.7s ease;
 					width: rem(500);
 					right: 0;
@@ -48,14 +54,13 @@
 				}
 			}
 		}
-
 	}
 	// .header__top-content-search-input
 	&__top-content-search-input {
 		position: relative;
 		width: 0;
 		right: -50px;
-		height: 56px;
+		@include adaptiv-value("height", 56, 28, 1);
 		visibility: hidden;
 		opacity: 0;
 		z-index: -5;
@@ -68,7 +73,7 @@
 		border: 1px solid #f1f5ff;
 		padding: 0 0;
 		transition: all 0.7s ease;
-		&:focus{
+		&:focus {
 			transition: all 0.7s ease;
 			color: #212529;
 			background-color: #f1f5ff;
@@ -81,12 +86,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 56px;
-		width: 56px;
+		padding: 14px;
 		border-radius: 4px;
 		background-color: #f1f5ff;
 		margin: 0 12px;
 		cursor: pointer;
+		@media (max-width: $mobile) {
+			background-color: #ffffff;
+			padding: 4px;
+		}
 	}
 	// .header__top-content-search-box-img
 	&__top-content-search-box-icon {
@@ -94,9 +102,18 @@
 		width: 28px;
 		height: 28px;
 	}
-	&__bottom-line{
+	// .header__top-content-btn
+	&__top-content-btn {
+		@media (max-width:$mobile){
+			 display: none; 
+		}
+	}
+	&__bottom-line {
 		background-color: #ffffff;
 		border-bottom: 1px solid #c0d3fb;
+		@media (max-width:$mobile){
+			 display: none; 
+		}
 	}
 }
 .logo {
@@ -122,6 +139,9 @@
 	// .social__list
 	&__list {
 		display: flex;
+		@media (max-width: $tablet) {
+			display: none;
+		}
 	}
 	// .social__list-item
 	&__list-item {
@@ -159,13 +179,14 @@
 	font-weight: 800;
 	color: #162c5b;
 	@include adaptiv-value("font-size", 24, 14, 1);
+
 }
 .position-map {
 	font-family: $fontFamily;
 	font-weight: normal;
 	font-style: normal;
 	color: $mainColor;
-	@include adaptiv-value("font-size", 16, 12, 1);
+	@include adaptiv-value("font-size", 16, 8, 1);
 	line-height: 24px;
 }
 .menu {

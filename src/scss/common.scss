@@ -3,12 +3,11 @@
     display: inline-block;
     font-family: $fontFamily;
     font-weight: 600;
-    font-size: 18px;
-    line-height: 24px;
+    @include adaptiv-value("font-size", 18, 14, 1);
     color: #ffffff;
     background-color: #2770F1;
     border-radius: 4px;
-    padding: 16px;
+    padding: 19px;
     transition: all 0.7s ease;
     &:hover{
         transition: all 0.7s ease;
