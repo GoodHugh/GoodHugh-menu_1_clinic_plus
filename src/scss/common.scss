@@ -1,17 +1,18 @@
 // Заголовки, общие БЄМ блоки и проче...
-._btn-blue{
+._btn-blue {
     display: inline-block;
     font-family: $fontFamily;
     font-weight: 600;
     @include adaptiv-value("font-size", 18, 14, 1);
     color: #ffffff;
-    background-color: #2770F1;
+    background-color: #2770f1;
     border-radius: 4px;
     padding: 19px;
     transition: all 0.7s ease;
-    &:hover{
+    &:hover {
         transition: all 0.7s ease;
-        color: #2770F1;
-        background-color: #F1F5FF;
+        color: #2770f1;
+        background-color: #f1f5ff;
     }
 }
+
