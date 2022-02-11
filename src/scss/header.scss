@@ -22,11 +22,11 @@
 	&__top-content-right {
 		display: flex;
 		align-items: center;
-		@media (max-width:$tablet){
+		@media (max-width: $tablet) {
 			justify-content: space-between;
 			flex: 1 1 auto;
 		}
-		@media (max-width:$mobile){
+		@media (max-width: $mobile) {
 			justify-content: end;
 		}
 	}
@@ -68,7 +68,7 @@
 		position: relative;
 		width: 0;
 		right: -50px;
-		@include adaptiv-value("height", 56, 28, 1);
+		@include adaptiv-value("height", 56, 38, 1);
 		visibility: hidden;
 		opacity: 0;
 		z-index: -5;
@@ -79,7 +79,6 @@
 		color: $mainColor;
 		font-size: rem(16);
 		border: 1px solid #f1f5ff;
-		padding: 0 0;
 		transition: all 0.7s ease;
 		&:focus {
 			transition: all 0.7s ease;
@@ -97,7 +96,6 @@
 		border-radius: 4px;
 		background-color: #f1f5ff;
 		@include adaptiv-value("margin", 0 12px, 0 5px, 1);
-		//margin: 0 12px;
 		cursor: pointer;
 		@media (max-width: $mobile) {
 			background-color: #ffffff;
@@ -237,7 +235,6 @@
 	&__list-item {
 		display: flex;
 		flex-direction: column;
-		z-index: 10;
 		align-items: center;
 		position: relative;
 		@media (any-hover: hover) {
@@ -254,21 +251,6 @@
 					transform: rotate(90deg);
 				}
 			}
-		}
-		@media (max-width:$mobile){
-			 &._activ_sub-list {
-				.menu__sub-list {
-					z-index: 5;
-					top: 100%;
-					transition: all 0.7s ease;
-					visibility: visible;
-					pointer-events: auto;
-					opacity: 1;
-				}
-				.menu__list-icon::before {
-					transform: rotate(90deg);
-				}
-			} 
 		}
 	}
 	// .menu__list-item-title
@@ -388,6 +370,32 @@
 }
 
 //====================================================================================================
+._menu_sub-list_active {
+    z-index: 5;
+    top: 100%;
+    transition: all 0.7s ease;
+    visibility: visible;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+._menu_list-icon_actice::before {
+	transform: rotate(90deg);
+}
+._header_top-content-search-input_active {
+	@media (max-width:$tablet){
+		position: absolute;
+		transition: all 0.7s ease;
+		width: rem(500);
+		visibility: visible;
+		pointer-events: auto;
+		padding: 0 10px;
+		opacity: 1;
+		z-index: 0;
+	}
+
+}
+
 
 //Burger
 
@@ -437,5 +445,3 @@
 		}
 	}
 }
-
-
