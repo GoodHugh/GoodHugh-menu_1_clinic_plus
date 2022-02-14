@@ -10,7 +10,7 @@ window.onload = function () {
     function documentAction(elem) {
         const targetObjMenu = elem.target;
         const targetObjSeaech = elem.target;
-        if (window.innerWidth > 768 && isMobile.any()) {
+        if (window.innerWidth > 300 && isMobile.any()) {
             if (targetObjMenu.classList.contains('menu__list-item-button')) {
                 const parentObjMenu = targetObjMenu.parentElement;
                 parentObjMenu.querySelector('.menu__sub-list').classList.toggle('_menu_sub-list_active');
@@ -25,10 +25,10 @@ window.onload = function () {
                 })
             }
             if (targetObjSeaech.classList.contains('header__top-content-search-box')) {
-                document.querySelector('.header__top-content-search-input').classList.toggle('_header_top-content-search-input_active');
+                document.querySelector('.header__top-content-search-input').classList.toggle('header_top-content-search-input_activ');
             }
             if (!targetObjSeaech.classList.contains('header__top-content-search-box')){
-                document.querySelector('.header__top-content-search-input').classList.remove('_header_top-content-search-input_active');
+                document.querySelector('.header__top-content-search-input').classList.remove('header_top-content-search-input_activ');
             }
         }
     }

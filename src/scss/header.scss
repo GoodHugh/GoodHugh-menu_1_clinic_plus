@@ -9,6 +9,7 @@
 		align-items: center;
 		background-color: #fff;
 		padding: 15px 0;
+		position: relative;
 		@media (max-width: $tablet) {
 			padding: 5px 0;
 		}
@@ -65,7 +66,6 @@
 	}
 	// .header__top-content-search-input
 	&__top-content-search-input {
-		position: relative;
 		width: 0;
 		right: -50px;
 		@include adaptiv-value("height", 56, 38, 1);
@@ -86,6 +86,11 @@
 			background-color: #f1f5ff;
 			border-color: #2770f1;
 			outline: 0;
+		}
+		@media (max-width:$tablet){
+			position: absolute;
+			top: 100%;
+			left: 0;
 		}
 	}
 	// .header__content-search-box
@@ -207,6 +212,7 @@
 				transition: all 0.7s ease;
 				background: rgba(255, 255, 255, 0.8);
 				overflow: auto;
+				display: block;
 			}
 		}
 	}
@@ -216,7 +222,6 @@
 	// .menu__list
 	&__list {
 		display: flex;
-		justify-content: space-between;
 		align-items: center;
 		padding: 0 24px;
 		@media (max-width: $tablet) {
@@ -237,6 +242,7 @@
 		flex-direction: column;
 		align-items: center;
 		position: relative;
+		flex: 1 1 auto;
 		@media (any-hover: hover) {
 			&:hover {
 				.menu__sub-list {
@@ -251,6 +257,9 @@
 					transform: rotate(90deg);
 				}
 			}
+		}
+		@media (max-width:$tablet){
+			
 		}
 	}
 	// .menu__list-item-title
@@ -267,9 +276,6 @@
 		@media (max-width: $pc) {
 			padding: 10px 5px;
 			font-size: 16px;
-		}
-		@media (max-width: $tablet) {
-			font-size: 14px;
 		}
 		@media (max-width: $mobile) {
 			font-size: 18px;
@@ -327,7 +333,7 @@
 		z-index: 0;
 		left: 0;
 		top: 100px;
-		width: 200px;
+		width: 100%;
 		padding: 5px 0;
 		visibility: hidden;
 		transition: all 0.7s ease;
@@ -371,31 +377,34 @@
 
 //====================================================================================================
 ._menu_sub-list_active {
-    z-index: 5;
-    top: 100%;
-    transition: all 0.7s ease;
-    visibility: visible;
-    pointer-events: auto;
-    opacity: 1;
+	z-index: 5;
+	top: 100%;
+	transition: all 0.7s ease;
+	visibility: visible;
+	pointer-events: auto;
+	opacity: 1;
+	@media (max-width:$tablet){
+		position: absolute;
+		top: 100%;
+		left: 0;
+	}
 }
 
 ._menu_list-icon_actice::before {
 	transform: rotate(90deg);
 }
-._header_top-content-search-input_active {
-	@media (max-width:$tablet){
-		position: absolute;
+
+.header_top-content-search-input_activ {
+	@media (max-width: $tablet) {
+		display: block;
 		transition: all 0.7s ease;
-		width: rem(500);
 		visibility: visible;
-		pointer-events: auto;
-		padding: 0 10px;
 		opacity: 1;
 		z-index: 0;
+		position: absolute;
+		width: 100%;
 	}
-
 }
-
 
 //Burger
 
@@ -416,7 +425,7 @@
 			position: absolute;
 			width: 100%;
 			height: rem(2);
-			background-color: #000;
+			background-color: #2770f1;
 		}
 		&::before {
 			top: 0;
